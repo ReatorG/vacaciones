@@ -2,10 +2,7 @@ package com.example.vacaciones.Author.domain;
 
 import com.example.vacaciones.Writing.domain.Writing;
 import com.example.vacaciones.user.domain.User;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,5 +22,6 @@ public class Author extends User {
     @OneToMany(mappedBy = "author", fetch = FetchType.LAZY)
     private List<Writing> writings = new ArrayList<>();
 
+    @Transient
     private List<List<Writing>> collections;
 }
