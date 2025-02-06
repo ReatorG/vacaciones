@@ -1,17 +1,25 @@
 package com.example.vacaciones.Writing.domain;
 
 import com.example.vacaciones.Author.domain.Author;
+import com.example.vacaciones.Comment.domain.Comment;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
-@Entity
+@Getter
 @Data
+@Setter
+@NoArgsConstructor
+@Entity
 public class Writing {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(nullable = false)
@@ -26,4 +34,6 @@ public class Writing {
     @ManyToOne
     private Author author;
 
+    @OneToMany(mappedBy = "writing", fetch = FetchType.LAZY)
+    private List<Comment> comments;
 }

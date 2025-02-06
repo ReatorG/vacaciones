@@ -1,7 +1,7 @@
 package com.example.vacaciones.Author.domain;
 
+import com.example.vacaciones.AppUser.domain.AppUser;
 import com.example.vacaciones.Writing.domain.Writing;
-import com.example.vacaciones.user.domain.User;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @Entity
-public class Author extends User {
+public class Author extends AppUser {
 
     @Column(nullable = false)
     private float rating;
