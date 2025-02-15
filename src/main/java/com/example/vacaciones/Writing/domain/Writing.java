@@ -29,6 +29,15 @@ public class Writing {
     private String content;
 
     @Column(nullable = false)
+    private long likes;
+
+    @Column(nullable = false)
+    private long views;
+
+    @Column(nullable = false)
+    private int rating;
+
+    @Column(nullable = false)
     private Date publishDate;
 
     @ManyToOne

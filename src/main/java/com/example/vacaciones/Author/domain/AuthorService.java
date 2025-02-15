@@ -19,10 +19,6 @@ public class AuthorService {
         return authorRepository.findById(id).orElseThrow(() -> new RuntimeException("Author not found"));
     }
 
-    public Author saveAuthor(Author author) {
-        return authorRepository.save(author);
-    }
-
     public List<Author> getAllAuthors() {
         return authorRepository.findAll();
     }

@@ -21,13 +21,6 @@ public class AuthorController {
         return ResponseEntity.ok(authorService.getAuthor(id));
     }
 
-    @PostMapping
-    public ResponseEntity<Author> createAuthor(@RequestBody Author author) {
-        Author savedAuthor = authorService.saveAuthor(author);
-        return ResponseEntity.status(HttpStatus.CREATED).body(savedAuthor);
-    }
-
-
     @GetMapping("/list")
     public ResponseEntity<List<Author>> getAllAuthors() {
         return ResponseEntity.ok(authorService.getAllAuthors());
