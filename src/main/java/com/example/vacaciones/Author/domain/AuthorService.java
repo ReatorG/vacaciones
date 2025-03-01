@@ -33,7 +33,7 @@ public class AuthorService {
     }
 
     public List<Author> getAuthorsByName(String name) {
-        return authorRepository.findByUsername(name);
+        return authorRepository.findByAppUser_Username(name);
     }
 
     public List<Author> getTopRatedAuthors(int limit) {

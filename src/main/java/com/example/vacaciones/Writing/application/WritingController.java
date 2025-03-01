@@ -1,8 +1,5 @@
 package com.example.vacaciones.Writing.application;
 
-import com.example.vacaciones.AppUser.domain.AppUser;
-import com.example.vacaciones.AppUser.domain.AppUserService;
-import com.example.vacaciones.AppUser.dto.AppUserDTO;
 import com.example.vacaciones.Writing.domain.Writing;
 import com.example.vacaciones.Writing.domain.WritingService;
 import com.example.vacaciones.Writing.dto.WritingDTO;
@@ -14,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/writing")
 public class WritingController {
 
     @Autowired
@@ -30,7 +27,6 @@ public class WritingController {
         Writing savedWriting = writingService.createWriting(writingRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedWriting);
     }
-
 
     @GetMapping("/list")
     public ResponseEntity<List<Writing>> getAllWritings() {

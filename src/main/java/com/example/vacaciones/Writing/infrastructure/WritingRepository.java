@@ -7,11 +7,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface WritingRepository extends JpaRepository<Writing, Long> {
-    public List<Writing> findByTitle(String title);
-    public List<Writing> findByAuthorId(Long id);
+    List<Writing> findByTitle(String title);
 
-    @Query("SELECT a FROM Writing a ORDER BY a.rating DESC")
+    List<Writing> findByAuthor_AuthorId(Long authorId);
+
+    @Query("SELECT w FROM Writing w JOIN w.author a ORDER BY a.rating DESC")
     List<Writing> findTopRatedWritings(Pageable pageable);
 }

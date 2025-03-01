@@ -27,7 +27,7 @@ public class Comment {
     private AppUser appUser;
 
     @Column(nullable = false)
-    private int rating;
+    private float rating;
 
     @ManyToOne
     private Writing writing;

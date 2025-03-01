@@ -1,4 +1,4 @@
-package com.example.vacaciones.Writing.dto;
+package com.example.vacaciones.Comment.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,9 +9,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class WritingDTO {
-    private String title;
-    private String content;
+public class CommentDTO {
+    private String text;
+    private Long writingId;
     private Long userId;
+    private Float rating;
 
 }

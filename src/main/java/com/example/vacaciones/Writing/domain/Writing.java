@@ -35,7 +35,7 @@ public class Writing {
     private long views;
 
     @Column(nullable = false)
-    private int rating;
+    private float rating;
 
     @Column(nullable = false)
     private Date publishDate;
